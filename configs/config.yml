@@ -1,0 +1,25 @@
+notifier:
+  worker_queue_count: 15
+  worker_subscription_count: 10
+tarantool:
+  servers:
+    - "storage.sku:3301"
+    - "replica.sku:3301"
+  timeout: 5s
+  reconnect_interval: 1s
+sender:
+  template_folder: "internal/sender/templates"
+features:
+  - "street_id"
+  - "house"
+  - "price"
+  - "price_m2"
+  - "rooms"
+  - "floor"
+  - "year"
+  - "m2_main"
+rest:
+  port: 8000
+  read_timeout: 10s
+  write_timeout: 10s
+  max_header_bytes: 1048576
