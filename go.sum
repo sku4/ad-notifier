@@ -176,10 +176,10 @@ github.com/rogpeppe/go-internal v1.3.0/go.mod h1:M8bDsm7K2OlrFYOpmOWEs/qY81heoFR
 github.com/rogpeppe/go-internal v1.9.0 h1:73kH8U+JUqXU8lRuOHeVHaa/SZPifC7BkcraZVejAe8=
 github.com/shopspring/decimal v1.3.1 h1:2Usl1nmF/WZucqkFZhnfFYxxxu8LG21F6nPQBE5gKV8=
 github.com/shopspring/decimal v1.3.1/go.mod h1:DKyhrW/HYNuLGql+MJL6WCR6knT2jwCFRcu2hWCYk4o=
-github.com/sku4/ad-api v0.0.0-20230724190051-02b6d2cf4835 h1:DiQiaN2rX4owdAoSdU+YM/Yx+Z1qy+tftaF6ZtBXJM4=
-github.com/sku4/ad-api v0.0.0-20230724190051-02b6d2cf4835/go.mod h1:OQQHHDL1VJ0Ii2BQcRXZv7zo8i0c27N19OxvMo0MkZk=
-github.com/sku4/ad-parser v0.0.0-20230729110936-ca99cc28c3b2 h1:R/nIk83QzHBHvnWl0Qvw5X8sGMWei/DcHuKyVwAX0Hw=
-github.com/sku4/ad-parser v0.0.0-20230729110936-ca99cc28c3b2/go.mod h1:O8MdYVnoOcmYvEfZwtygD9u5WP8DfyRjwDJK963PV4w=
+github.com/sku4/ad-api v0.0.0-20230812053759-8d80e5067d5c h1:4Uo9d2MY2purQ/9BMMkpYbNeoMbEmveCXbAkzFQ/zVQ=
+github.com/sku4/ad-api v0.0.0-20230812053759-8d80e5067d5c/go.mod h1:TVmqm+diXndizzfLfIM7rghiGbQQ1GXdJya7ZXkk7hM=
+github.com/sku4/ad-parser v0.0.0-20230812053710-fefecdbed9b3 h1:5GpBUSPGnMiHlTDHVNWAN1Yk1fFZR87IaGOuqvC6xDE=
+github.com/sku4/ad-parser v0.0.0-20230812053710-fefecdbed9b3/go.mod h1:O8MdYVnoOcmYvEfZwtygD9u5WP8DfyRjwDJK963PV4w=
 github.com/spacemonkeygo/spacelog v0.0.0-20180420211403-2296661a0572 h1:RC6RW7j+1+HkWaX/Yh71Ee5ZHaHYt7ZP4sQgUrm6cDU=
 github.com/spacemonkeygo/spacelog v0.0.0-20180420211403-2296661a0572/go.mod h1:w0SWMsp6j9O/dk4/ZpIhL+3CkG8ofA2vuv7k+ltqUMc=
 github.com/spf13/afero v1.9.5 h1:stMpOSZFs//0Lv29HduCmli3GUfpFoF3Y1Q/aXj/wVM=

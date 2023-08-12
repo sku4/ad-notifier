@@ -10,8 +10,8 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/prometheus/client_golang v1.16.0
 	github.com/shopspring/decimal v1.3.1
-	github.com/sku4/ad-api v0.0.0-20230724190051-02b6d2cf4835
-	github.com/sku4/ad-parser v0.0.0-20230729110936-ca99cc28c3b2
+	github.com/sku4/ad-api v0.0.0-20230812053759-8d80e5067d5c
+	github.com/sku4/ad-parser v0.0.0-20230812053710-fefecdbed9b3
 	github.com/spf13/viper v1.16.0
 	github.com/tarantool/go-tarantool/v2 v2.0.0-20230628170032-dbfaab5078b5
 	golang.org/x/text v0.10.0
