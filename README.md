@@ -1,7 +1,7 @@
-# Ad-notifier
+# Service for handle ads queue and send notifications by subscriptions
 
-Example environment file ```.env```:
+[![golang version](https://img.shields.io/github/go-mod/go-version/sku4/ad-notifier?logo=go&style=flat-square)](#)
+[![project version](https://img.shields.io/github/v/tag/sku4/ad-notifier?color=97ca00&style=flat-square)](#)
 
-```shell
-TELEGRAM_BOT_TOKEN=<token>
-```
+## Run Project
+Go to repo [ad-run](https://github.com/sku4/ad-run) and follow the steps ```Run Project```
