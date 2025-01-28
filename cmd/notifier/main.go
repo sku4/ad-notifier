@@ -52,6 +52,7 @@ func main() {
 
 	senders, errs := sender.NewSender(ctx)
 	if errs != nil {
+		cancel()
 		log.Fatalf("error init senders: %s", errors.Join(errs...))
 	}
 

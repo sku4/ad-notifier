@@ -34,7 +34,7 @@ var (
 )
 
 func (t Telegram) NotifyNewAd(ctx context.Context, adTnt *clientModel.AdTnt,
-	streetExt *street.Ext, tgIds []int64) []error {
+	streetExt *street.Ext, tgIDs []int64) []error {
 	log := logger.Get()
 	errs := make([]error, 0)
 
@@ -134,7 +134,7 @@ func (t Telegram) NotifyNewAd(ctx context.Context, adTnt *clientModel.AdTnt,
 		return errs
 	}
 
-	for _, chatID := range tgIds {
+	for _, chatID := range tgIDs {
 		if len(adTnt.Photos) > 0 {
 			err := t.client.SendMediaPhoto(ctx, []string{adTnt.Photos[0]}, []string{mess.String()}, chatID, retryCount)
 			if err != nil {
@@ -162,7 +162,7 @@ func (t Telegram) NotifyNewAd(ctx context.Context, adTnt *clientModel.AdTnt,
 		}
 	}
 
-	sendAdTotal.WithLabelValues("ok").Add(float64(len(tgIds) - len(errs)))
+	sendAdTotal.WithLabelValues("ok").Add(float64(len(tgIDs) - len(errs)))
 
 	if len(errs) > 0 {
 		sendAdTotal.WithLabelValues("error").Add(float64(len(errs)))

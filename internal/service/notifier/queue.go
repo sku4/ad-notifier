@@ -175,7 +175,7 @@ func (q *Queue) process(ctx context.Context, adTnt *clientModel.AdTnt) error {
 	}
 
 	cnt := int64(math.Pow(powerOfTwo, float64(len(sortFields))))
-	tgIdsSet := make(map[int64]struct{})
+	tgIDsSet := make(map[int64]struct{})
 	errs := make([]error, 0)
 
 	wg.Add(cfg.Notifier.WorkerSubscriptionCount)
@@ -203,7 +203,7 @@ func (q *Queue) process(ctx context.Context, adTnt *clientModel.AdTnt) error {
 					}
 				}
 
-				filterIds, err := q.repos.Subscription.Filter(ctx, fields)
+				filterIDs, err := q.repos.Subscription.Filter(ctx, fields)
 				if err != nil {
 					q.rw.Lock()
 					errs = append(errs, fmt.Errorf("subscription filter: %w fields %v", err, fields))
@@ -212,8 +212,8 @@ func (q *Queue) process(ctx context.Context, adTnt *clientModel.AdTnt) error {
 				}
 
 				q.rw.Lock()
-				for _, id := range filterIds {
-					tgIdsSet[id] = struct{}{}
+				for _, id := range filterIDs {
+					tgIDsSet[id] = struct{}{}
 				}
 				q.rw.Unlock()
 			}
@@ -222,8 +222,8 @@ func (q *Queue) process(ctx context.Context, adTnt *clientModel.AdTnt) error {
 
 	wg.Wait()
 
-	tgIds := make([]int64, 0, len(tgIdsSet))
-	for id := range tgIdsSet {
+	tgIds := make([]int64, 0, len(tgIDsSet))
+	for id := range tgIDsSet {
 		tgIds = append(tgIds, id)
 	}
 
