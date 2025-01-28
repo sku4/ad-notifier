@@ -54,8 +54,6 @@ func main() {
 		log.Fatalf("error init senders: %s", errors.Join(errs...))
 	}
 
-	defer cancel()
-
 	repos := repository.NewRepository(conn)
 	services := service.NewService(repos, senders)
 	watchers := watcher.NewWatcher(ctx, services)
@@ -68,6 +66,8 @@ func main() {
 	if err != nil {
 		log.Fatalf("error watchers register: %s", err)
 	}
+
+	defer cancel()
 
 	// run rest server
 	routes := handlers.InitRoutes()
