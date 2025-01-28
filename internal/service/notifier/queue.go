@@ -222,12 +222,12 @@ func (q *Queue) process(ctx context.Context, adTnt *clientModel.AdTnt) error {
 
 	wg.Wait()
 
-	tgIds := make([]int64, 0, len(tgIDsSet))
+	tgIDs := make([]int64, 0, len(tgIDsSet))
 	for id := range tgIDsSet {
-		tgIds = append(tgIds, id)
+		tgIDs = append(tgIDs, id)
 	}
 
-	if len(tgIds) > 0 {
+	if len(tgIDs) > 0 {
 		// get street name
 		var streetExt *street.Ext
 		var errStreet error
@@ -240,7 +240,7 @@ func (q *Queue) process(ctx context.Context, adTnt *clientModel.AdTnt) error {
 		}
 
 		// send notifications about new ad
-		tgErrs := q.senders.Telegram.NotifyNewAd(ctx, adTnt, streetExt, tgIds)
+		tgErrs := q.senders.Telegram.NotifyNewAd(ctx, adTnt, streetExt, tgIDs)
 		errs = append(errs, tgErrs...)
 	}
 

@@ -47,14 +47,14 @@ func main() {
 
 	// init context
 	ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt)
-	defer cancel()
 	ctx = configs.Set(ctx, cfg)
 
 	senders, errs := sender.NewSender(ctx)
 	if errs != nil {
-		cancel()
 		log.Fatalf("error init senders: %s", errors.Join(errs...))
 	}
+
+	defer cancel()
 
 	repos := repository.NewRepository(conn)
 	services := service.NewService(repos, senders)
