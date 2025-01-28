@@ -24,7 +24,8 @@ func main() {
 	log := logger.Get()
 	cfg, err := configs.Init()
 	if err != nil {
-		log.Fatalf("error init config: %s", err)
+		log.Errorf("error init config: %s", err)
+		return
 	}
 
 	// init tarantool
@@ -36,7 +37,8 @@ func main() {
 		},
 	})
 	if err != nil {
-		log.Fatalf("error tarantool connection refused: %s", err)
+		log.Errorf("error tarantool connection refused: %s", err)
+		return
 	}
 	defer func() {
 		errs := conn.Close()
@@ -52,7 +54,8 @@ func main() {
 
 	senders, errs := sender.NewSender(ctx)
 	if errs != nil {
-		log.Fatalf("error init senders: %s", errors.Join(errs...))
+		log.Errorf("error init senders: %s", errors.Join(errs...))
+		return
 	}
 
 	repos := repository.NewRepository(conn)
@@ -65,7 +68,8 @@ func main() {
 
 	err = watchers.Register()
 	if err != nil {
-		log.Fatalf("error watchers register: %s", err)
+		log.Errorf("error watchers register: %s", err)
+		return
 	}
 
 	// run rest server

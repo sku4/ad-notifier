@@ -17,7 +17,7 @@ func NewServer(ctx context.Context, handler http.Handler) *http.Server {
 		MaxHeaderBytes: cfg.Rest.MaxHeaderBytes, // 1 MB
 		ReadTimeout:    cfg.Rest.ReadTimeout,
 		WriteTimeout:   cfg.Rest.WriteTimeout,
-		BaseContext: func(n net.Listener) context.Context {
+		BaseContext: func(_ net.Listener) context.Context {
 			return ctx
 		},
 	}
