@@ -70,7 +70,7 @@ env:
   - name: TELEGRAM_BOT_TOKEN
     valueFrom:
       secretKeyRef:
-        name: ad
+        name: ad-app
         key: telegram_bot_token
 
 nodeSelector: {}
