@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  ad-notifier:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-06-25T15:23:38.084256+03:00"
+    description: Service for handle ads queue and send notifications by subscriptions
+    digest: 75588e8e524bdcd57e6fbf242daafb23a7fb0bab199dae00fe45ce428debe17d
+    name: ad-notifier
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/sku4/ad-notifier/refs/heads/master/docs/charts/ad-notifier-1.0.0.tgz
+    version: 1.0.0
+generated: "2025-06-25T15:23:38.083576+03:00"

@@ -45,3 +45,8 @@ helm-template:
 		-f .helm/values-local.yaml .helm \
 		> .helm/helm.txt \
 		--debug
+
+helm-package:
+	helm package .helm
+	mv ad-notifier*.tgz docs/charts
+	helm repo index docs/charts --url https://raw.githubusercontent.com/sku4/ad-notifier/refs/heads/master/docs/charts/
